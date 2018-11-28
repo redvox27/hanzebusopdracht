@@ -10,7 +10,24 @@ import javax.jms.Session;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public  class ListenerStarter implements Runnable, ExceptionListener {
+import java.nio.channels.Selector;
+
+public class ListenerStarter implements Runnable, ExceptionListener {
+
+    public ListenerStarter(Selector selector, Boolean b) {
+
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    @Override
+    public void onException(JMSException exception) {
+
+    }
+
 //TODO	Implementeer de starter voor de messagelistener:
 //		Zet de verbinding op met de messagebroker en start de listener met 
 //		de juiste selector.
