@@ -8,7 +8,7 @@ public class Runner {
         brokerThread.start();
     }
 
-    public static void main(String[] args) throws Exception {
-//        thread(new ListenerStarter("(SELECTOR INVULLEN"), false);
+    public static void main(String[] args) {
+        thread(new ListenerStarter("QueueBuzz", true), false);
     }
 }

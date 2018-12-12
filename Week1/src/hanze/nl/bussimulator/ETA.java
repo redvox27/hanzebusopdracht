@@ -10,4 +10,13 @@ public class ETA {
         this.richting = richting;
         this.aankomsttijd = aankomsttijd;
     }
+
+    @Override
+    public String toString() {
+        return "ETA{" +
+                "halteNaam='" + halteNaam + '\'' +
+                ", richting=" + richting +
+                ", aankomsttijd=" + aankomsttijd +
+                '}';
+    }
 }

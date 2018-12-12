@@ -19,4 +19,15 @@ public class Bericht {
         this.ETAs = new ArrayList<ETA>();
     }
 
+    @Override
+    public String toString() {
+        return "Bericht{" +
+                "lijnNaam='" + lijnNaam + '\'' +
+                ", eindpunt='" + eindpunt + '\'' +
+                ", bedrijf='" + bedrijf + '\'' +
+                ", busID='" + busID + '\'' +
+                ", tijd=" + tijd +
+                ", ETAs=" + ETAs +
+                '}';
+    }
 }

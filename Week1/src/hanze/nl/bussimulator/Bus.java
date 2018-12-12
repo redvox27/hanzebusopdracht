@@ -5,6 +5,8 @@ import hanze.nl.bussimulator.Halte.Positie;
 
 public class Bus {
 
+    private static final XStream xStream = new XStream();
+
     private Bedrijven bedrijf;
     private Lijnen lijn;
     private int halteNummer;
@@ -98,6 +100,9 @@ public class Bus {
     }
 
     public void sendBericht(Bericht bericht) {
-        //TODO verstuur een XML bericht naar de messagebroker.
+        String xmlMessage = xStream.toXML(bericht);
+
+        Producer producer = new Producer(xmlMessage);
+        producer.verstuur();
     }
 }
