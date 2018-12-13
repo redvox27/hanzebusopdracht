@@ -40,7 +40,7 @@ class Producer {
     }
 
     private void verstuurXmlBericht() throws JMSException {
-        Destination destination = session.createTopic("QueueBuzz");
+        Destination destination = session.createQueue("QueueBuzz");
         MessageProducer producer = session.createProducer(destination);
         TextMessage message = session.createTextMessage(this.bericht);
 

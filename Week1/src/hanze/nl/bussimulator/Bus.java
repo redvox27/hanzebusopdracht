@@ -100,6 +100,8 @@ public class Bus {
     }
 
     public void sendBericht(Bericht bericht) {
+        xStream.alias("Bericht", Bericht.class);
+        xStream.alias("ETA", ETA.class);
         String xmlMessage = xStream.toXML(bericht);
 
         Producer producer = new Producer(xmlMessage);

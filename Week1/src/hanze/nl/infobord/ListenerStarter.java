@@ -17,7 +17,7 @@ public class ListenerStarter implements Runnable, ExceptionListener {
 
     private String selector;
 
-    public ListenerStarter(String selector, Boolean b) {
+    public ListenerStarter(String selector) {
         this.selector = selector;
     }
 
@@ -30,16 +30,11 @@ public class ListenerStarter implements Runnable, ExceptionListener {
             connection = new ActiveMQConnectionFactory("tcp://localhost:61616").createConnection();
             connection.start();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            MessageConsumer messageConsumer = session.createConsumer(session.createTopic(selector));
+            MessageConsumer messageConsumer = session.createConsumer(session.createTopic("QueueBuzz_JSON"), selector);
             messageConsumer.setMessageListener(new QueueListener());
 
-            Thread.sleep(500);
-
-            connection.close();
         } catch (JMSException e) {
             logger.error("Er is geen listener starter gerunt", e);
-        } catch (InterruptedException e) {
-            logger.error("Thread sleep is niet gelukt", e);
         }
 
     }
