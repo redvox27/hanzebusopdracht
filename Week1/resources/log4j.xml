@@ -6,15 +6,6 @@
         <param name="Target" value="System.out"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%n%d{HH:mm:ss.SSS} %p (%t) : %n &#9; [%l] %n &#9; &#9; %m %n"/>
-            <!-- %n= new line; &#9;=tab -->
-        </layout>
-    </appender>
-
-    <appender name="file" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="../SmartPotato/backend/api.log" />
-        <param name="MaxBackupIndex" value="100" />
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%n%d{dd-MM-yyyy  HH:mm:ss.SSS} %p (%t) : %n &#9; [%l] %n &#9; &#9; %m %n"/>
         </layout>
     </appender>
 

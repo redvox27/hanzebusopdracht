@@ -11,7 +11,7 @@ import javax.jms.TextMessage;
 public class QueueListener implements MessageListener {
 
     public QueueListener() {
-        InfoBord infoBord = InfoBord.getInfoBord();
+        InfoBord.getInfoBord();
     }
 
     private static final Logger logger = LoggerFactory.getLogger(QueueListener.class);
@@ -23,7 +23,7 @@ public class QueueListener implements MessageListener {
             logger.info("richting " + message.getStringProperty("RICHTING"));
             TextMessage textMessage = (TextMessage) message;
             InfoBord infoBord = InfoBord.getInfoBord();
-            infoBord.verwerkBericht(textMessage.getText());
+            InfoBord.verwerktBericht(textMessage.getText());
             infoBord.setRegels();
         } catch (JMSException e) {
             logger.error("Textmessage niet verwerkt", e);

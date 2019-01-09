@@ -7,6 +7,17 @@ import java.util.Iterator;
 
 public class Runner {
 
+    /**
+    * IN DB: een tabel met twee coloms, id_buslog & logrecord
+    * op anypoint: vul de naam van het schema in ipv de naam van de db
+    * in foreach voor de insert in db is het application/java om een record op te bouwen voor in de db
+    * odoo: publish starten; odoopublisher; dan kan je naar de url gaan met er achter ?wsdl dan krijg je de
+    * volledige wsdl van je soap server te zien met een verwijzing naar een xsd schema aan het begin.
+    * in anypoint: webseriveconsumer wsdl url opgeven van de odoo dinges in het global elements scherm
+    *
+    **/
+
+
     private static HashMap<Integer, ArrayList<Bus>> busStart = new HashMap<Integer, ArrayList<Bus>>();
     private static ArrayList<Bus> actieveBussen = new ArrayList<Bus>();
     private static int interval = 1000;
